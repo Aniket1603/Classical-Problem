@@ -1,0 +1,29 @@
+import java.util.*;
+public class TowerOfHanoi {
+    
+  public static void TowerOfHanoi(int n,String scr,String helper,String des)
+  {  
+      if(n==1)
+      {
+           System.out.println("transffer "+n+" from " +scr+ " to  "+des);
+           return;
+      }
+      else{
+                                                 // Time complexity
+                                                 // O(2^n)
+      
+      TowerOfHanoi(n-1,scr,des,helper);
+      System.out.println("transffer "+n+" from "+scr+" to " +des);
+      
+      TowerOfHanoi(n-1,helper,scr,des);
+      
+      }
+      
+  }
+    public static void main(String[] args) {
+        int n=3;
+         TowerOfHanoi(n,"Source","Helper","Destination");
+        
+    }
+    
+}
